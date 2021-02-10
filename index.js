@@ -1,17 +1,22 @@
 function only5and3(n) {
-    if (n%5 === 0) {
-        console.log(n, 5, n%5, true)
-        return true
-    } else if (n%3 === 0) {
-        console.log(n, 3, n%3, true)
+    if (n%5 === 0 || n%3 === 0) {
+        console.log(true)
         return true
     } else {
-        console.log(n, false)
+        for (let i = n-5; i > 0; i-=5) {
+            if (i%3 === 0) {
+                console.log(true)
+                return true
+            }
+        }
+        console.log(false)
         return false
     }
 }
 
-only5and3(33);
+// passed tests except for Test.assertEquals(only5and3(51), false) and 51/3=17 so should return true NOT false
+
+only5and3(51);
 
 /*
 examples
